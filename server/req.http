@@ -1,0 +1,82 @@
+POST    http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "username12",
+    "email": "username12@gmail.com",
+    "password": "username"
+}
+###
+POST    http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+###
+PUT http://localhost:5000/api/users/622a0a93857936a3eeb88ead
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwYTkzODU3OTM2YTNlZWI4OGVhZCIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDY5MjI0MTEsImV4cCI6MTY0NzE4MTYxMX0.UhgQTX97mqNM8WnHpw7TlToAegByrYYJgqe23xGieIk
+
+{
+    "isAdmin": true
+}
+###
+GET http://localhost:5000/api/users/
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwYTkzODU3OTM2YTNlZWI4OGVhZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NjkyMjcwOSwiZXhwIjoxNjQ3MTgxOTA5fQ.vetwgkjfeXRcnUN2sXCGoLDoQQMltFECcGmOXiPafy8
+
+###
+GET http://localhost:5000/api/users?new=true
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwYTkzODU3OTM2YTNlZWI4OGVhZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NzU5OTY1NSwiZXhwIjoxNjQ3ODU4ODU1fQ.o2sBq4N1OWGxBRko7NpJ28jzio5ghrmG7XHtuxWpA1k
+
+###
+GET http://localhost:5000/api/users/stats
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwYTkzODU3OTM2YTNlZWI4OGVhZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NzYwNzI5NSwiZXhwIjoxNjQ3ODY2NDk1fQ.WWIsU-2-VAucaTTi3JdfxvRCDuJiWqGeeZEtxBq7I40
+
+###
+POST  http://localhost:5000/api/products
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwYTkzODU3OTM2YTNlZWI4OGVhZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NzI1Mjc1NSwiZXhwIjoxNjQ3NTExOTU1fQ.zTjd-DmXbRp3TsTJBLUrtS0h6RICfLXxPGqoeEQ0N1k
+
+{
+    "title": "Hakira T-Shirt",
+    "desc": "test",
+    "img": "https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png",
+    "categories": ["man", "t-shirt", "classic"],
+    "size": ["XL", "L", "M", "S"],
+    "color": ["white", "red", "black", "yellow"],
+    "price": 600
+}
+###
+GET  http://localhost:5000/api/products?category=women
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwYTkzODU3OTM2YTNlZWI4OGVhZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NjkyMjcwOSwiZXhwIjoxNjQ3MTgxOTA5fQ.vetwgkjfeXRcnUN2sXCGoLDoQQMltFECcGmOXiPafy8
+
+###
+POST http://localhost:5000/api/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjhhODhlNmU5MGZlMjM1NzYyNzg1MiIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDcxMDQzNjksImV4cCI6MTY0NzM2MzU2OX0.AoNY7-VoMOx9eDXzfihtEVTUqrlICcMAJo8fAdQAiQk
+
+{
+    "userId": "6228a88e6e90fe2357627852",
+    "products": [
+        {
+            "productId": "231a8asndsandba",
+            "quantity": 2
+        },
+        {
+            "productId": "da8daqndasidua9sda9da",
+            "quantity": 1
+        }
+    ],
+    "amount": 100,
+    "address": "USA"
+}
+###
+GET http://localhost:5000/api/orders/stats
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmEwYTkzODU3OTM2YTNlZWI4OGVhZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0NjkyMjcwOSwiZXhwIjoxNjQ3MTgxOTA5fQ.vetwgkjfeXRcnUN2sXCGoLDoQQMltFECcGmOXiPafy8
